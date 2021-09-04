@@ -3,7 +3,7 @@ import './sign-in.style.scss'
 import FormInput from '../form-input/form-input.component'
 import CustomButton from '../custom-button/custom-button.component';
 
-
+import {signInWithGoogle} from '../../firebase/firebase.utlis'
 
 class SignInComponent extends Component {
 
@@ -47,10 +47,12 @@ render() {
                  
                  required/>
                 
-
+            <div className='buttons'>
                  <CustomButton type='submit' > Sign IN </CustomButton>
+                 <CustomButton  onClick={signInWithGoogle} isGoogleButton > Sign IN with Google </CustomButton>
+            </div>
             </form>
-
+           
         </div>
     )
 }
