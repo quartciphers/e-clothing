@@ -10,16 +10,17 @@ import CheckoutPage from './pages/checkout/checkout.component';
 
 
 import {Switch,Route,Redirect} from 'react-router-dom'
-
-import {auth} from './firebase/firebase.utlis';
-import {createUserProfileDocument} from './firebase/firebase.utlis'
+import {auth,createUserProfileDocument} from './firebase/firebase.utlis'
 
 import {connect} from 'react-redux';
-
 import {setCurrentUser} from './redux/user/user.actions'
 import {selectCurrentUser} from './redux/user/user.selector'
 
 import {createStructuredSelector} from 'reselect';
+
+
+
+
 
 class App extends Component {
  
@@ -51,6 +52,7 @@ class App extends Component {
   
     setCurrentUser(userAuth);
     
+    
     })
 
   }
@@ -79,7 +81,8 @@ class App extends Component {
 }
 
 const mapStateToProps = createStructuredSelector({
-  currentUser: selectCurrentUser
+  currentUser: selectCurrentUser,
+
 })
 
 
@@ -87,7 +90,7 @@ const mapStateToProps = createStructuredSelector({
 const mapDispatchToProps = (dispatch) =>({
       
      setCurrentUser: user => dispatch(setCurrentUser(user))
-
+   
 })
 
 
