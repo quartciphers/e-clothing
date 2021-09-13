@@ -12,8 +12,7 @@ export const MenuItemContainer = styled.div`
 	border: 1px solid black;
 	margin: 0 7.5px 15px;
 	overflow: hidden;
-
-	&:hover {
+	&:hover{
 		cursor: pointer;
 
 		& .background-image {
@@ -21,7 +20,7 @@ export const MenuItemContainer = styled.div`
 			transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
 		}
 
-		& .content {
+		&.content {
 			opacity: 0.9;
 		}
 	}
@@ -41,6 +40,7 @@ export const BackgroundImageContainer = styled.div`
   background-size: cover;
   background-position: center;
   background-image: ${({ imageUrl }) => `url(${imageUrl})`};
+  
 `;
 
 export const ContentContainer = styled.div`
